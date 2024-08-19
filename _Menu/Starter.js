@@ -21,7 +21,7 @@ const Starter = () => {
     const {cart, setCart} = useCart(); // Ensure useCart returns a proper array
     const navigation = useNavigation();
     const route = useRoute();
-    const tableNumber = route.params
+    const tableNumber = route.params?.tableNumber
 
     useEffect(() => {
         (async () => {
@@ -180,7 +180,7 @@ const Starter = () => {
                 }];
             }
         });
-        navigation.navigate('Cashier', {tableNumber});
+        navigation.navigate('Cashier', {tableNumber: route.params?.tableNumber});
     };
 
     return (
