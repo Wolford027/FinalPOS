@@ -7,7 +7,6 @@ import Receipt from '../_components/Reciept'
 import { AntDesign } from '@expo/vector-icons'
 import { addDoc, collection } from 'firebase/firestore'
 import { useCart } from '../_context/Cart'
-import { parse } from 'expo-linking'
 
 
 const Cashier = () => {
@@ -15,12 +14,9 @@ const Cashier = () => {
   const [showReciept,setShowReciept] = useState(false)
   const [recieptData, setRecieptData] = useState(null)
   const route = useRoute()
-  const tableNumber = route.params
+  const tableNumber = route.params?.tableNumber
   const { cart, setCart } = useCart()
   const navigation = useNavigation();
-
-
-  console.log("Table Number in Cashier:", tableNumber);
 
   useEffect(() => {
     const backAction = () => {
