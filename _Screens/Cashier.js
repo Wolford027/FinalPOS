@@ -9,6 +9,7 @@ import { addDoc, collection } from 'firebase/firestore'
 import { useCart } from '../_context/Cart'
 
 
+
 const Cashier = () => {
   const [dropdown,setDropdown] = useState(false)
   const [showReciept,setShowReciept] = useState(false)
