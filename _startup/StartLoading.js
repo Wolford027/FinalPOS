@@ -12,6 +12,8 @@ export default function StartLoading({ size }) {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         navigation.navigate('Home');
+      } else {
+        navigation.navigate('Login');
       }
     });
 
